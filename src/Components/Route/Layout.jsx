@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Navbar/Header";
+import { Toaster } from "react-hot-toast";
 
 const Layout = () => {
     return (
@@ -8,6 +9,7 @@ const Layout = () => {
             <Header />
             <div className="mt-8">
             <Outlet />
+            <Toaster />
             </div>
         </div>
         </>

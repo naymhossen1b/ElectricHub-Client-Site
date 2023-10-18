@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
+import { AuthContext } from "../Auth/Authprovider";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const { logout, user } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logout()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className=" py-8 shadow-md">
@@ -15,7 +27,7 @@ const Header = () => {
           </div>
         <ul  className={`md:flex absolute md:static justify-center items-center font-bold text-start 
         ${open ? "" : "hidden"}
-         gap-4 lg:mr-5 p-1 rounded-md mt-32 md:mt-0 ml-4 `}>
+         gap-4 lg:mr-5 p-1 rounded-md mt-40 md:mt-0 ml-4 `}>
           <li>
             <NavLink
               to="/"
@@ -77,16 +89,29 @@ const Header = () => {
           <div className="flex-1">
             <h1 className="text-4xl font-bold mr-0 md:mr-32">ElectricHub</h1>
           </div>
-         <button className="md:btn hover:cursor-pointer border-none font-bold mr-0 md:mr-8">
-         <NavLink
-            to="/login"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "font-bold text-green-500" : ""
-            }
-          >
-            Login
-          </NavLink>
-         </button>
+
+          {
+            user ? (
+              <>
+                <button onClick={handleSignOut} className="md:btn btn-sm hover:bg-red-400 rounded-md bg-gray-400 border-none text-white">
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <button className="md:btn hover:cursor-pointer border-none font-bold mr-0 md:mr-8">
+              <NavLink
+                 to="/login"
+                 className={({ isActive, isPending }) =>
+                   isPending ? "pending" : isActive ? "font-bold text-green-500" : ""
+                 }
+               >
+                 Login
+               </NavLink>
+              </button>
+            )
+          }
+
+        
         </div>
       </nav>
     </div>

@@ -4,6 +4,9 @@ import Home from "../Home/Home";
 import Addproducr from "../Pages/Addproduct";
 import Mycart from "../Pages/Mycart";
 import Login from "../Auth/Login";
+import Footer from "../Home/Footer";
+import Banner from "../Navbar/Banner";
+import Tvs from "../Pages/Tvs/Tvs";
 
 const appRouter = createBrowserRouter([
     {
@@ -13,7 +16,7 @@ const appRouter = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('/brand.json')
+                loader: () => fetch('http://localhost:5000/products')
             },
             {
                 path: '/addproduct',
@@ -21,11 +24,24 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/mycart',
-                element: <Mycart />
+                element: <Mycart />,
             },
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/footer',
+                element: <Footer />
+            },
+            {
+                path: '/banner',
+                element: <Banner />
+            },
+            {
+                path:'/brand/:id',
+                element: <Tvs />,
+                loader: () => fetch('http://localhost:5000/products')
             }
         ]
     }

@@ -6,7 +6,7 @@ const Layout = () => {
         <>
         <div className="w-11/12 mx-auto">
             <Header />
-            <div className="mt-8 mb-12">
+            <div className="mt-8">
             <Outlet />
             </div>
         </div>

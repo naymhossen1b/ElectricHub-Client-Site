@@ -12,7 +12,8 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                loader: () => fetch('/brand.json')
             },
             {
                 path: '/addproduct',

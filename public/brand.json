@@ -1,0 +1,35 @@
+{
+    "brands": [
+      {
+        "id": 1,
+        "brand_name": "TVs",
+        "brand_image": "https://i.ibb.co/HY3qkTZ/tvs.png"
+      },
+      {
+        "id": 2,
+        "brand_name": "Laptops",
+        "brand_image": "https://i.ibb.co/mNR5Tn5/laptops.png"
+      },
+      {
+        "id": 3,
+        "brand_name": "Smart Watchs",
+        "brand_image": "https://i.ibb.co/jffzWgb/smart-watch-bubble.png"
+      },
+      {
+        "id": 4,
+        "brand_name": "Tablets",
+        "brand_image": "https://i.ibb.co/3Sw2JYr/tablet-cat-card.png"
+      },
+      {
+        "id": 5,
+        "brand_name": "Headphones",
+        "brand_image": "https://i.ibb.co/4pcJ604/headphones.png"
+      },
+      {
+        "id": 6,
+        "brand_name": "Gaming",
+        "brand_image": "https://i.ibb.co/kg6ygxV/gaming.png"
+      }
+    ]
+  }
+  

@@ -47,6 +47,16 @@ const Header = () => {
               My Cart
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/signup"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "font-bold underline text-green-500" : ""
+              }
+            >
+              Sign up
+            </NavLink>
+          </li>
          <li>
          <fieldset className="w-full space-y-1 dark:text-gray-100 md:ml-8">
 	<label className="hidden">Search</label>

@@ -7,6 +7,8 @@ import Login from "../Auth/Login";
 import Footer from "../Home/Footer";
 import Banner from "../Navbar/Banner";
 import Tvs from "../Pages/Tvs/Tvs";
+import Signup from "../Auth/Signup";
+
 
 const appRouter = createBrowserRouter([
     {
@@ -31,6 +33,10 @@ const appRouter = createBrowserRouter([
                 element: <Login />
             },
             {
+                path: '/signup',
+                element: <Signup />
+            },
+            {
                 path: '/footer',
                 element: <Footer />
             },
@@ -41,7 +47,7 @@ const appRouter = createBrowserRouter([
             {
                 path:'/brand/:id',
                 element: <Tvs />,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: ({params}) => fetch(`http://localhost:5000/products${params.id.type}`)
             }
         ]
     }

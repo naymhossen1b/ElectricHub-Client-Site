@@ -8,12 +8,14 @@ import Footer from "../Home/Footer";
 import Banner from "../Navbar/Banner";
 import Tvs from "../Pages/Tvs/Tvs";
 import Signup from "../Auth/Signup";
+import Error from "../Pages/Error";
 
 
 const appRouter = createBrowserRouter([
     {
         path: '/',
         element: <Layout />,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',

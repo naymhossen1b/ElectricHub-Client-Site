@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" py-8 shadow-md">
+    <div className=" py-3 shadow-md">
       <nav className="flex justify-between items-center">
 
       <div className="md:hidden text-4xl" onClick={() => setOpen(!open)}>
@@ -57,16 +57,6 @@ const Header = () => {
               }
             >
               My Cart
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/signup"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "font-bold underline text-green-500" : ""
-              }
-            >
-              Sign up
             </NavLink>
           </li>
          <li>

@@ -39,7 +39,7 @@ const Addproduct = () => {
   return (
     <div className="">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-500">Add New Coffee</h1>
+        <h1 className="text-4xl font-bold text-gray-500">Add New Product</h1>
         <p className="font-medium">
           It is a long established fact that a reader will be distraceted by the readable content of
           a page when looking at its layout. The point of using Lorem Ipsum is that it has a
@@ -123,7 +123,7 @@ const Addproduct = () => {
                   />
                 </div>
                 <button className="btn btn-block bg-orange-300 border-none col-span-full">
-                  <input type="submit" value="Add Coffee" className="hover:cursor-pointer" />
+                  <input type="submit" value="Add Your Product" className="hover:cursor-pointer" />
                 </button>
               </div>
             </fieldset>

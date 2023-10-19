@@ -20,7 +20,7 @@ const appRouter = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('http://localhost:5000/category')
             },
             {
                 path: '/addproduct',
@@ -47,9 +47,9 @@ const appRouter = createBrowserRouter([
                 element: <Banner />
             },
             {
-                path:'/brand/:id',
+                path:'/getproduct/:brand_names',
                 element: <Tvs />,
-                loader: ({params}) => fetch(`http://localhost:5000/products${params.id.type}`)
+                loader: ({params}) => fetch(`http://localhost:5000/${params.brand_names}`)
             }
         ]
     }

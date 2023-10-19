@@ -15,7 +15,7 @@ const Brands = ({ brand }) => {
           <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/80 via-black/50"></div>
         </div>
         <div className="relative">
-          <h2 className="mb-6 block font-sans font-bold text-4xl leading-[1.5] tracking-normal text-white antialiased">
+          <h2 className="mb-6 block font-sans font-bold text-2xl text-gray-400 leading-[1.5] tracking-normal antialiased">
             {brand_name}
           </h2>
         </div>

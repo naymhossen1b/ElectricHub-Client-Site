@@ -7,41 +7,44 @@ import Sociallogin from "./Sociallogin";
 import Healmet from "../Helmet/Healmet";
 
 const Login = () => {
-    const { userLogin } = useContext(AuthContext);
-    const location = useLocation();
-    const navigate = useNavigate();
-  
-    const [loginErr, setLoginErr] = useState("");
-    const [succes, setSucces] = useState("");
-  
-    const handleLogin = (e) => {
-      e.preventDefault();
-      const email = e.target.email.value;
-      const password = e.target.password.value;
-      setLoginErr("");
-      setSucces("");
-      userLogin(email, password)
-        .then((res) => {
-          console.log(res);
-          navigate(location?.state ? location.state : "/");
-          toast.success("Successfully Login!");
-        })
-        .catch((error) => {
-          console.log(error);
-          toast.error(error.message);
-        });
-    };
-    return (
-        <div>
+  const { userLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [loginErr, setLoginErr] = useState("");
+  const [succes, setSucces] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    setLoginErr("");
+    setSucces("");
+    userLogin(email, password)
+      .then((res) => {
+        console.log(res);
+        navigate(location?.state ? location.state : "/");
+        toast.success("Successfully Login!");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.message);
+      });
+  };
+  return (
+    <div>
       <Healmet title="Login Now" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="mx-auto w-full p-5 rounded-tl-3xl rounded-br-3xl text-white mt-10 bg-[url('https://i.ibb.co/8mqYFFk/details.jpg')]">
-          <div className="text-center mt-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="mx-auto w-full p-5 rounded-tl-3xl rounded-br-3xl mt-10 ">
+          <div className="text-center mt-8 border p-4 rounded-tr-2xl rounded-bl-2xl shadow-md ">
             <h1 className="font-bold text-xl">Tell us about yourself</h1>
             <p>Lets get started. Please provide your information.</p>
           </div>
 
-          <form onSubmit={handleLogin} className="mt-8 space-y-5">
+          <form
+            onSubmit={handleLogin}
+            className="mt-8 space-y-5 border shadow-md p-10 rounded-br-xl rounded-tl-xl"
+          >
             <div className="space-y-1 text-sm">
               <label className="block font-bold">Email Address</label>
               <input
@@ -67,7 +70,7 @@ const Login = () => {
             <button
               // onClick={notify}
               type="submit"
-              className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400"
+              className="block w-full p-2 text-center rounded-xl dark:text-gray-900 bg-yellow-300"
             >
               Login
             </button>
@@ -81,7 +84,7 @@ const Login = () => {
           <div>
             <Sociallogin />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 border border-yellow-400 p-2 w-9/12 mx-auto rounded-md">
             <p className="text-xs text-center font-bold sm:px-6">
               Don't have an account?
               <Link to="/signup">
@@ -98,19 +101,19 @@ const Login = () => {
         </div>
 
         {/* right section */}
-        <div className="p-8 mt-32">
-          <h1 className="font-bold text-3xl text-red-500">W E L C O M E T O E V E T L A B</h1>
+        <div className="p-8 mt-24 w-full bg-[url('https://i.ibb.co/09wX9Sr/Download-Forgot-Password-and-Account-Login-for-Web-page-Protection-Security-Key-Access-System-in-Sma.jpg')] bg-cover">
+          {/* <h1 className="font-bold text-3xl text-red-500">W E L C O M E T O E V E T L A B</h1>
           <p className="font-semibold mt-5">
             "Welcome to our premier entertainment event management website! Discover a world of
             excitement, where we curate unforgettable experiences. Whether you're planning a
             concert, festival, or corporate event, we've got you covered. Explore our services,
             connect with top-notch talent, and let's make your event dreams a reality."
-          </p>
+          </p> */}
         </div>
       </div>
       <Toaster />
     </div>
-    );
+  );
 };
 
 export default Login;

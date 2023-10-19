@@ -57,15 +57,15 @@ const Signup = () => {
         <div>
              <div>
       <Healmet title="Registration" />
-      <div className="mt-8 md:w-6/12 mx-auto rounded-xl p-5 bg-[url('https://i.ibb.co/Zx3hcyF/people-celebrating-new-year-illustration-1284-11628.jpg')]">
-        <div className="text-center text-white">
+      <div className="mt-8 md:w-6/12 mx-auto rounded-xl shadow-md mb-8 border p-20 ">
+        <div className="text-center">
           <h1 className="font-bold text-xl">Tell us about yourself</h1>
           <p>Lets get started. Please provide your information.</p>
         </div>
 
         <form onSubmit={handleRegistar} className="mt-8 space-y-5">
           <div className="space-y-1 text-sm">
-            <label className="block text-white">Full Name</label>
+            <label className="block ">Full Name</label>
             <input
               type="text"
               name="name"
@@ -75,7 +75,7 @@ const Signup = () => {
             />
           </div>
           <div className="space-y-1 text-sm">
-            <label className="block text-white">Photo Url</label>
+            <label className="block">Photo Url</label>
             <input
               type="url"
               name="photo"
@@ -85,7 +85,7 @@ const Signup = () => {
             />
           </div>
           <div className="space-y-1 text-sm">
-            <label className="block text-white">Email Address</label>
+            <label className="block">Email Address</label>
             <input
               type="email"
               name="email"
@@ -97,7 +97,7 @@ const Signup = () => {
           </div>
 
           <div className="space-y-1 text-sm">
-            <label className="block text-white">Password</label>
+            <label className="block">Password</label>
             <input
               type={showPass ? "text" : "password"}
               name="password"
@@ -112,7 +112,7 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            className="block w-full p-3 text-center rounded-xl dark:text-gray-900 dark:bg-violet-400"
+            className="block w-full p-2 text-center rounded-xl dark:text-gray-900 dark:bg-yellow-300"
           >
             Sign in
           </button>
@@ -124,13 +124,13 @@ const Signup = () => {
 
         <div className="flex items-center pt-4 space-x-1">
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-          <p className="px-3 text-sm text-white">Join your social accounts</p>
+          <p className="px-3 text-sm">Join your social accounts</p>
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
         </div>
         <div>
           <Sociallogin />
         </div>
-        <div className="mt-5 text-white">
+        <div className="mt-5 border p-3 rounded-md shadow-md">
           <p className="text-xs text-center font-bold sm:px-6">
             Alrady have an account?
             <Link to="/login">

@@ -65,7 +65,6 @@ const Cartdata = ({ cart, getCart, setGetCart }) => {
             <p>{ratings}</p>
           </div>
         </div>
-        {/*  */}
         <div className="col-span-2 md:ml-4 items-center grid text-center font-bold space-y-3">
           <h1> Price: ${tv_price}</h1>
           <button onClick={() => handleDelete(_id)} className="btn hover:bg-red-500 font-bold">Delete</button>

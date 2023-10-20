@@ -24,11 +24,11 @@ const Sociallogin = () => {
         <div>
              <div>
             <div className="lg:flex gap-3  w-9/12 mx-auto  justify-center md:items-center mt-5">
-            <button onClick={() => handleSocialLogin(googleLogin)} className="btn btn-outline">
-            <GrGoogle /> Login With Google
+            <button onClick={() => handleSocialLogin(googleLogin)} className="btn  btn-outline">
+            <GrGoogle /> Login
           </button>
             <button onClick={() => handleSocialLogin(githubLogin)} className="btn lg:mt-0 mt-2 btn-outline">
-            <GrGithub /> Login With Github
+            <GrGithub />Login
           </button>
         </div>
         </div>

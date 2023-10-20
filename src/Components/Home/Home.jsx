@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import Brands from "./Brands";
-import Footer from "./Footer";
 import Banner from "../Navbar/Banner";
 import Ourbrand from "./Ourbrand";
 import Policy from "./Policy";
+import Healmet from "../Helmet/Healmet";
 
 
 const Home = () => {
@@ -13,6 +13,7 @@ const Home = () => {
 
     return (
        <>
+       <Healmet title="Home" />
         <div>
             <Banner />
             <Policy />
@@ -27,7 +28,6 @@ const Home = () => {
         </div>
         <div className="mt-8">
             <Ourbrand />
-            <Footer />
         </div>
         </div>
 

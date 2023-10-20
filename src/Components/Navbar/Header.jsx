@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { RxCross2 } from "react-icons/rx";
+import { RxAvatar, RxCross2 } from "react-icons/rx";
 import { AuthContext } from "../Auth/Authprovider";
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
           </div>
         <ul  className={`md:flex absolute md:static justify-center items-center font-bold text-start 
         ${open ? "" : "hidden"}
-         gap-4 lg:mr-5 p-1 rounded-md mt-40 md:mt-0 ml-4 `}>
+         gap-4 lg:mr-5 p-1 rounded-md mt-40 md:mt-0 ml-4 bg-white text-black `}>
           <li>
             <NavLink
               to="/"
@@ -77,7 +77,7 @@ const Header = () => {
         </ul>
         <div className="flex justify-between items-center gap-5">
           <div className="flex-1">
-            <h1 className="text-4xl font-bold mr-0 md:mr-32">ElectricHub</h1>
+            <h1 className="md:text-4xl font-bold mr-0 md:mr-32">ElectricHub</h1>
           </div>
 
           {
@@ -100,12 +100,23 @@ const Header = () => {
               </button>
             )
           }
-
-        
+          <div>
+          {user?.email ? (
+            <div className="avatar rounded-full">
+            <div className="w-12 rounded-full">
+              <img className="rounded-full" src={user.photoURL} />
+            </div>
+          </div>
+          ) : (
+            <div className="avatar">
+              <RxAvatar className="text-gray-500 text-5xl md:text-6xl mr-2" />
+            </div>
+          )}
+          </div>
         </div>
+      
       </nav>
     </div>
   );
 };
-
 export default Header;

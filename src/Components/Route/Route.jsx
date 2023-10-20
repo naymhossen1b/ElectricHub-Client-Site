@@ -11,6 +11,8 @@ import Signup from "../Auth/Signup";
 import Error from "../Pages/Error";
 import Productdetails from "../Pages/Tvs/Productdetails";
 import UpdateProduct from "../Pages/UpdateProduct";
+import Privateroute from "../Auth/Privateroute";
+
 
 
 const appRouter = createBrowserRouter([
@@ -30,7 +32,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/mycart',
-                element: <Mycart />,
+                element: <Privateroute> <Mycart /> </Privateroute>,
                 loader: () => fetch('http://localhost:5000/products')
             },
             {
@@ -50,9 +52,9 @@ const appRouter = createBrowserRouter([
                 element: <Banner />
             },
             {
-                path:'/getproduct/:brand_names',
+                path:'/getproduct/:type',
                 element: <Tvs />,
-                loader: ({params}) => fetch(`http://localhost:5000/${params.brand_names}`)
+                loader: ({params}) => fetch(`http://localhost:5000/${params.type}`)
             },
             {
                 path: "productDetails/:id",

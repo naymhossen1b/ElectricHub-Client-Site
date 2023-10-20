@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import Healmet from "../Helmet/Healmet";
 
 const Addproduct = () => {
 
@@ -38,6 +39,7 @@ const Addproduct = () => {
 
   return (
     <div className="">
+      <Healmet title="Add Product" />
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-500">Add New Product</h1>
         <p className="font-medium">
@@ -112,8 +114,8 @@ const Addproduct = () => {
                 </div>
                 <div className="col-span-full">
                   <label className="text-sm">Your Product Photo</label>
-                  <input
-                    id="photo"
+                  <inputw
+                    id="url"
                     type="url"
                     name="photo"
                     placeholder="Enter photo URL"

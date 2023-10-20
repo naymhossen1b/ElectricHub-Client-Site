@@ -9,6 +9,8 @@ import Banner from "../Navbar/Banner";
 import Tvs from "../Pages/Tvs/Tvs";
 import Signup from "../Auth/Signup";
 import Error from "../Pages/Error";
+import Productdetails from "../Pages/Tvs/Productdetails";
+import UpdateProduct from "../Pages/UpdateProduct";
 
 
 const appRouter = createBrowserRouter([
@@ -50,6 +52,16 @@ const appRouter = createBrowserRouter([
                 path:'/getproduct/:brand_names',
                 element: <Tvs />,
                 loader: ({params}) => fetch(`http://localhost:5000/${params.brand_names}`)
+            },
+            {
+                path: "/productDetails/:type",
+                element: <Productdetails />,
+                loader: ({params}) => fetch(`http://localhost:5000/${params.type}`)
+            },
+            {
+                path: '/updateproduct/:id',
+                element: <UpdateProduct />,
+                loader: ({params}) => fetch(`http://localhost:5000/${params.id}`)
             }
         ]
     }

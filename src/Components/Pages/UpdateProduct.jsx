@@ -1,10 +1,14 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const updatedProduct = useLoaderData();
   console.log(updatedProduct);
   const { brand_name, ratings, tv_image, tv_name, tv_price, type, _id } = updatedProduct || {};
+
+
+  const params = useParams();
+    // console.log(params);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -18,7 +22,9 @@ const UpdateProduct = () => {
     const customarData = { tv_name, brand_name, type, tv_price, ratings, tv_image };
     console.log(customarData);
 
-    fetch(`http://localhost:5000/${_id}`, {
+    
+
+    fetch(`http://localhost:5000/${params.type}/${_id}`, {
       method: "PUT",
       headers: {
         'content-type': 'application/json',

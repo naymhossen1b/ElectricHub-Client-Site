@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import Brands from "./Brands";
 import Footer from "./Footer";
-// import Banner from "../Navbar/Banner";
+import Banner from "../Navbar/Banner";
 import Ourbrand from "./Ourbrand";
-// import Policy from "./Policy";
+import Policy from "./Policy";
 
 
 const Home = () => {
@@ -14,8 +14,8 @@ const Home = () => {
     return (
        <>
         <div>
-            {/* <Banner /> */}
-            {/* <Policy /> */}
+            <Banner />
+            <Policy />
            <div className="text-center">
            <h2 className="text-4xl font-bold animate-pulse mt-20">Popular Categories</h2>
             <div className="border mb-16 mt-2 w-6/12 mx-auto"></div>

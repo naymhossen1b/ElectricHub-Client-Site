@@ -41,14 +41,12 @@ const Addproduct = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-500">Add New Product</h1>
         <p className="font-medium">
-          It is a long established fact that a reader will be distraceted by the readable content of
-          a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-          more-or-less normal distribution of letters, as opposed to using Content here.
+        Introducing the latest electronic marvel: our cutting-edge smartwatch! Seamlessly merging style and function, it boasts a vibrant touchscreen, heart rate monitoring, GPS, and water resistance. Stay connected with notifications, track your fitness, and elevate your tech-savvy fashion. The perfect companion for a modern, active lifestyle.
         </p>
       </div>
       {/* coffee form */}
       <div>
-        <section className="p-6 bg-orange-800 mt-8">
+        <section className="p-10 mb-10 mt-8">
           <form onSubmit={handleInput} className="container flex flex-col mx-auto space-y-12">
             <fieldset className="grid grid-cols-3 gap-6 p-6 rounded-md shadow-sm bg-orange-100 text-black">
               <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">

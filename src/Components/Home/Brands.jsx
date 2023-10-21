@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Brands = ({ brand }) => {
   const { brand_name, brand_image, type } = brand || {};
+  // console.log(type);
 
   return (
     <div>

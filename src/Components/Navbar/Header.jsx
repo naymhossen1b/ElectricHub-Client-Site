@@ -96,6 +96,7 @@ const Header = () => {
             <p onClick={() => {
               setDarkMode(!darkMode)
             }} className="rounded-full toggle toggle-success dark:bg-white dark:text-black bg-black text-white">{ 
+            
             darkMode ? <WiDayCloudyWindy  /> : <WiNightFog  /> }</p>
 
             </div>

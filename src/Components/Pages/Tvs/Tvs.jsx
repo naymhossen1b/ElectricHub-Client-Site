@@ -5,6 +5,10 @@ import { Helmet } from "react-helmet";
 
 const Tvs = () => {
   const allProducts = useLoaderData();
+  // console.log(allProducts);
+
+  // const id = useParams();
+  // console.log(id);
 
   return (
    <div className=" mb-20">

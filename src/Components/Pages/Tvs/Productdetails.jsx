@@ -1,11 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import ProductSlider from "./productSlider";
 import Healmet from "../../Helmet/Healmet";
 
 const Productdetails = () => {
   const productDetails = useLoaderData();
-  // console.log(productDetails);
+  console.log(productDetails);
   const { brand_name, ratings, tv_image, tv_name, tv_price, description } = productDetails || {};
+
+
+  const params = useParams();
+  console.log(params);
 
   return (
     <div>
@@ -13,7 +17,7 @@ const Productdetails = () => {
       <ProductSlider />
       <section className="mt-10 mb-10 gap-5 grid grid-cols-1 md:flex items-center ">
         <div className="grid-cols-3 ">
-          <img src={tv_image} alt="" />
+          <img className="h-full w-96" src={tv_image} alt="" />
         </div>
         <div className=" space-y-2 p-6 bg-gray-100 rounded-tr-full dark:bg-black dark:text-white">
           <header className="text-2xl font-bold">{tv_name}</header>
@@ -32,9 +36,14 @@ const Productdetails = () => {
               <input type="radio" name="rating-3" className="mask mask-heart bg-lime-400" />
               <input type="radio" name="rating-3" className="mask mask-heart bg-green-400" />
             </div>
+            
             <p>{ratings}</p>
           </div>
           <p className="font-bold">Price: ${tv_price}</p>
+          <div className="flex items-center gap-5">
+            <button className="btn border-none font-bold bg-violet-400">Buy Now</button>
+            <button className=" btn border-none font-bold bg-sky-300">Add to Cart</button>
+          </div>
         </div>
       </section>
     </div>

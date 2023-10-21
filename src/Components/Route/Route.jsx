@@ -57,16 +57,16 @@ const appRouter = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/${params.type}`)
             },
             {
-                path: "productDetails/:id",
+                path: "/:type/:id",
                 element: <Productdetails />,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/${params.type}/${params.id}`)
             },
             {
-                path: '/:update/:id',
+                path: '/type/:id',
                 element: <UpdateProduct />,
-                loader: ({params}) =>  fetch(`http://localhost:5000/products${params.id}`)
+                loader: ({params}) =>  fetch(`http://localhost:5000/${params.type}${params.id}`)
 
-                // loader: ({params}) => fetch(`http://localhost:5000/${params.brand_names}`)
+                // loader: ({params}) => fetch(`http://localhost:5000/${params.type}`)
                 // loader: ({params}) => fetch(`http://localhost:5000/tvs/${params.id}`)
             }
         ]

@@ -8,7 +8,7 @@ const UpdateProduct = () => {
 
 
   const params = useParams();
-    // console.log(params);
+    console.log(params);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -56,7 +56,6 @@ const UpdateProduct = () => {
             guidance and exceptional customer service. Elevate your tech lifestyle with us today.
           </p>
         </div>
-        {/* coffee form */}
         <div>
           <section className="p-6 bg-orange-800 mt-8">
             <form onSubmit={handleUpdate} className="container flex flex-col mx-auto space-y-12">

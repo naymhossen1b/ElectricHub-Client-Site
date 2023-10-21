@@ -12,7 +12,7 @@ const Privateroute = ({children}) => {
 
 
     if(loding){
-        return <span className="loading loading-dots loading-md"></span>
+        return <span className="loading  loading-dots loading-lg"></span>
 
     }
 

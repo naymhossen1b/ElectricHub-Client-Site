@@ -1,12 +1,25 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { WiDayCloudyWindy, WiNightFog } from "react-icons/wi";
 import { RxAvatar, RxCross2 } from "react-icons/rx";
 import { AuthContext } from "../Auth/Authprovider";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const { logout, user } = useContext(AuthContext);
+
+  const [darkMode, setDarkMode] = useState("false");
+
+  useEffect(() => {
+    if(darkMode){
+      document.documentElement.classList.add('dark');
+    }else{
+      document.documentElement.classList.remove('dark');
+    }
+
+  }, [darkMode]);
+
 
   const handleSignOut = () => {
     logout()
@@ -77,7 +90,15 @@ const Header = () => {
         </ul>
         <div className="flex justify-between items-center gap-5">
           <div className="flex-1">
-            <h1 className="md:text-4xl font-bold mr-0 md:mr-32">ElectricHub</h1>
+            <div className="flex items-center">
+            <h1 className="md:text-4xl font-bold mr-0 md:mr-20">ElectricHub</h1>
+
+            <p onClick={() => {
+              setDarkMode(!darkMode)
+            }} className="rounded-full toggle toggle-success dark:bg-white dark:text-black bg-black text-white">{ 
+            darkMode ? <WiDayCloudyWindy  /> : <WiNightFog  /> }</p>
+
+            </div>
           </div>
 
           {
@@ -88,7 +109,7 @@ const Header = () => {
                 </button>
               </>
             ) : (
-              <button className="md:btn hover:cursor-pointer border-none font-bold mr-0 md:mr-8">
+              <button className="md:btn hover:cursor-pointer border-none font-bold hover:bg-yellow-500">
               <NavLink
                  to="/login"
                  className={({ isActive, isPending }) =>

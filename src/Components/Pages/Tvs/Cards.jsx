@@ -8,7 +8,7 @@ const Cards = ({ card }) => {
 
   return (
     <div>
-      <div className="md:card md:card-side bg-white text-black shadow-xl gap-8 mt-5">
+      <div className="md:card dark:bg-black dark:text-white md:card-side bg-white text-black shadow-xl gap-8 mt-5">
         <figure>
           <img className="h-full w-96 p-4" src={tv_image} alt="Movie" />
         </figure>

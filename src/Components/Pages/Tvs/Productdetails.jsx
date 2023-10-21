@@ -15,7 +15,7 @@ const Productdetails = () => {
         <div className="grid-cols-3 ">
           <img src={tv_image} alt="" />
         </div>
-        <div className=" space-y-2 p-6 bg-gray-100 rounded-tr-full">
+        <div className=" space-y-2 p-6 bg-gray-100 rounded-tr-full dark:bg-black dark:text-white">
           <header className="text-2xl font-bold">{tv_name}</header>
           <p className="font-medium w-9/12">{description}</p>
           <p className="font-bold">Brand: {brand_name}</p>

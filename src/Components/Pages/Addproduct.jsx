@@ -16,7 +16,7 @@ const Addproduct = () => {
     const customarData = { tv_image, brand_name, tv_name, type, tv_price, description, ratings };
     console.log(customarData);
 
-    fetch("http://localhost:5000/products", {
+    fetch(`http://localhost:5000/add/${type}/`, {
       method: "POST",
       headers: {
         'content-type': 'application/json',
@@ -34,7 +34,10 @@ const Addproduct = () => {
             confirmButtonText: 'OK'
           })
         }
-      });
+
+      })
+      .catch(error => console.log(error))
+
   };
 
   return (

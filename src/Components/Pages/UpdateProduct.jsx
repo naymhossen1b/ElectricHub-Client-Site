@@ -6,9 +6,7 @@ const UpdateProduct = () => {
   console.log(updatedProduct);
   const { brand_name, ratings, tv_image, tv_name, tv_price, type, _id } = updatedProduct || {};
 
-
-  const params = useParams();
-    console.log(params);
+const params = useParams();
 
   const handleUpdate = (e) => {
     e.preventDefault();

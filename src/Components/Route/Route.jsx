@@ -62,9 +62,9 @@ const appRouter = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/${params.type}/${params.id}`)
             },
             {
-                path: '/type/:id',
+                path: '/update/:type/:id',
                 element: <UpdateProduct />,
-                loader: ({params}) =>  fetch(`http://localhost:5000/${params.type}${params.id}`)
+                loader: ({params}) =>  fetch(`http://localhost:5000/update/${params.type}/${params.id}`)
 
                 // loader: ({params}) => fetch(`http://localhost:5000/${params.type}`)
                 // loader: ({params}) => fetch(`http://localhost:5000/tvs/${params.id}`)

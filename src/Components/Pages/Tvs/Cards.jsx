@@ -32,7 +32,7 @@ const Cards = ({ card }) => {
 
           <div className="flex items-center flex-grow gap-4">
             <Link to={`/${type}/${_id}`}><button className="btn bg-yellow-300">Details</button></Link>
-            <Link to={`${type}/${_id}`}><button className="btn bg-yellow-300">Update</button></Link>
+            <Link to={`/update/${type}/${_id}`}><button className="btn bg-yellow-300">Update</button></Link>
             
           </div>
         </div>

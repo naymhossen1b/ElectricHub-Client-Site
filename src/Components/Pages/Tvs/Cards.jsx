@@ -8,15 +8,17 @@ const Cards = ({ card }) => {
 
   return (
     <div>
-      <div className="md:card dark:bg-black dark:text-white md:card-side bg-white text-black shadow-xl gap-8 mt-5">
-        <figure>
-          <img className="h-full w-96 p-4" src={tv_image} alt="Movie" />
+      <div className="grid gap-8 p-3 grid-cols-1 md:grid-cols-2 dark:bg-black dark:text-white md:card-side bg-white text-black shadow-xl  mt-5">
+       <div className="grid-cols-3">
+       <figure>
+          <img className="w-44 h-full" src={tv_image} alt="imaeg" />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title text-2xl font-bold animate-pulse">{brand_name}</h2>
+       </div>
+        <div className="grid-cols-2">
+        <p className="text-xl font-bold">{tv_name}</p>
+          <h2 className="card-title font-bold">{brand_name}</h2>
           <div className="font-bold py-3 space-y-2">
           <p>Brand: {type}</p>
-          <p>{tv_name}</p>
           <div className='flex items-center gap-2'>
           <div className="rating">
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />

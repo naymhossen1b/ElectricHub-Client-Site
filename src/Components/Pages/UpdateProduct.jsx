@@ -1,12 +1,15 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import ProductSlider from "./Tvs/productSlider";
+import Healmet from "../Helmet/Healmet";
+import { AiOutlineWarning } from "react-icons/ai";
 
 const UpdateProduct = () => {
   const updatedProduct = useLoaderData();
-  console.log(updatedProduct);
+  // console.log(updatedProduct);
   const { brand_name, ratings, tv_image, tv_name, tv_price, type, _id } = updatedProduct || {};
 
-const params = useParams();
+  const params = useParams();
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -20,32 +23,32 @@ const params = useParams();
     const customarData = { tv_name, brand_name, type, tv_price, ratings, tv_image };
     console.log(customarData);
 
-    
-
     fetch(`http://localhost:5000/${params.type}/${_id}`, {
       method: "PUT",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify(customarData),
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.modifiedCount > 0){
+        if (data.modifiedCount > 0) {
           Swal.fire({
-            title: 'Success!',
-            text: 'Product Updated!',
-            icon: 'success',
-            confirmButtonText: 'OK'
-          })
+            title: "Success!",
+            text: "Product Updated!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
         }
       });
   };
 
   return (
     <div>
+      <Healmet title="Product/Update" />
+      <ProductSlider />
       <div className="">
-        <div className="text-left space-y-3">
+        <div className="text-left mt-8 space-y-3">
           <h1 className="text-4xl font-bold text-gray-500">Update Our Product Now</h1>
           <p className="font-medium">
             Visit our electronic brand shop for a cutting-edge technology experience. Discover a
@@ -55,7 +58,7 @@ const params = useParams();
           </p>
         </div>
         <div>
-          <section className="p-6 bg-orange-800 mt-8">
+          <section className=" mt-8">
             <form onSubmit={handleUpdate} className="container flex flex-col mx-auto space-y-12">
               <fieldset className="grid grid-cols-3 gap-6 p-6 rounded-md shadow-sm bg-orange-100 text-black">
                 <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -82,7 +85,11 @@ const params = useParams();
                     />
                   </div>
                   <div className="col-span-full sm:col-span-3">
-                    <label className="text-sm">Product Type</label>
+                    <label className="text-sm flex gap-3 items-center">
+                      Product Type
+                      <AiOutlineWarning />
+                      Type Fixed!{" "}
+                    </label>
                     <input
                       id="lastname"
                       type="text"
@@ -126,7 +133,11 @@ const params = useParams();
                     />
                   </div>
                   <button className="btn btn-block bg-orange-300 border-none col-span-full">
-                    <input type="submit" value="Add Coffee" className="hover:cursor-pointer" />
+                    <input
+                      type="submit"
+                      value="Update Your Product"
+                      className="hover:cursor-pointer"
+                    />
                   </button>
                 </div>
               </fieldset>

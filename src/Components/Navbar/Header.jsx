@@ -4,12 +4,17 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { WiDayCloudyWindy, WiNightFog } from "react-icons/wi";
 import { RxAvatar, RxCross2 } from "react-icons/rx";
 import { AuthContext } from "../Auth/Authprovider";
+import { useCart } from "../Context/Cart";
+import { Badge } from "antd";
+
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const { logout, user } = useContext(AuthContext);
-
   const [darkMode, setDarkMode] = useState("false");
+
+  const[cart] = useCart();
+
 
   useEffect(() => {
     if(darkMode){
@@ -64,12 +69,14 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/mycart"
+              to="/cart"
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "font-bold underline text-green-500" : ""
               }
             >
-              My Cart
+               <Badge count={cart?.length} showZero offset={[10, -5]}>
+                    Cart
+                  </Badge>
             </NavLink>
           </li>
          <li>

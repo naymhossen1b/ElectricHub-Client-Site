@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "../Home/Home";
 import Addproducr from "../Pages/Addproduct";
-import Mycart from "../Pages/Mycart";
 import Login from "../Auth/Login";
 import Footer from "../Home/Footer";
 import Banner from "../Navbar/Banner";
@@ -12,6 +11,7 @@ import Error from "../Pages/Error";
 import Productdetails from "../Pages/Tvs/Productdetails";
 import UpdateProduct from "../Pages/UpdateProduct";
 import Privateroute from "../Auth/Privateroute";
+import CartPage from "../Pages/CartPage";
 
 
 
@@ -31,9 +31,8 @@ const appRouter = createBrowserRouter([
                 element: <Addproducr />
             },
             {
-                path: '/mycart',
-                element: <Privateroute> <Mycart /> </Privateroute>,
-                loader: () => fetch('http://localhost:5000/products')
+                path: '/cart',
+                element: <Privateroute> <CartPage />  </Privateroute>,
             },
             {
                 path: '/login',

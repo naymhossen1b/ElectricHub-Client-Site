@@ -6,14 +6,14 @@ const Addproduct = () => {
   const handleInput = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
-    const brandName = form.brandName.value;
+    const brand_name = form.brand_name.value;
+    const tv_image = form.tv_image.value;
+    const tv_name = form.tv_name.value;
     const type = form.type.value;
-    const price = form.price.value;
-    const shortDetails = form.shortDetails.value;
-    const rating = form.rating.value;
-    const customarData = { photo, name, brandName, type, price, shortDetails, rating };
+    const tv_price = form.tv_price.value;
+    const description = form.description.value;
+    const ratings = form.ratings.value;
+    const customarData = { tv_image, brand_name, tv_name, type, tv_price, description, ratings };
     console.log(customarData);
 
     fetch("http://localhost:5000/products", {
@@ -55,9 +55,9 @@ const Addproduct = () => {
                 <div className="col-span-full sm:col-span-3">
                   <label className="text-sm">Name</label>
                   <input
-                    id="firstname"
+                    id="tv_name"
                     type="text"
-                    name="name"
+                    name="tv_name"
                     placeholder="Enter your product name"
                     className="w-full p-1 rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
                   />
@@ -65,9 +65,9 @@ const Addproduct = () => {
                 <div className="col-span-full sm:col-span-3">
                   <label className="text-sm">Brand Name</label>
                   <input
-                    id="brandName"
+                    id="brand_name"
                     type="text"
-                    name="brandName"
+                    name="brand_name"
                     placeholder="Enter brand name"
                     className="w-full p-1 rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
                   />
@@ -85,9 +85,9 @@ const Addproduct = () => {
                 <div className="col-span-full sm:col-span-3">
                   <label className="text-sm">Details</label>
                   <input
-                    id="shortDetails"
+                    id="description"
                     type="text"
-                    name="shortDetails"
+                    name="description"
                     placeholder="Enter short details"
                     className="w-full p-1 rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
                   />
@@ -95,9 +95,9 @@ const Addproduct = () => {
                 <div className="col-span-full sm:col-span-3">
                   <label className="text-sm">Price</label>
                   <input
-                    id="price"
+                    id="tv_price"
                     type="number"
-                    name="price"
+                    name="tv_price"
                     placeholder="Enter price"
                     className="w-full p-1 rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
                   />
@@ -105,20 +105,20 @@ const Addproduct = () => {
                 <div className="col-span-full sm:col-span-3">
                   <label className="text-sm">Rating</label>
                   <input
-                    id="rating"
+                    id="ratings"
                     type="text"
-                    name="rating"
+                    name="ratings"
                     placeholder="Give your ratings"
                     className="w-full p-1 rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
                   />
                 </div>
                 <div className="col-span-full">
                   <label className="text-sm">Your Product Photo</label>
-                  <inputw
-                    id="url"
+                  <input
+                    id="tv_image"
                     type="url"
-                    name="photo"
-                    placeholder="Enter photo URL"
+                    name="tv_image"
+                    placeholder="Enter image URL"
                     className="w-full p-1 rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
                   />
                 </div>

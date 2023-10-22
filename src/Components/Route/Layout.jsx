@@ -6,7 +6,7 @@ import Footer from "../Home/Footer";
 const Layout = () => {
     return (
         <>
-        <div className="w-11/12 mx-auto dark:bg-black dark:text-white">
+        <div className="w-11/12 mx-auto">
             <Header />
             <div className="mt-8">
             <Outlet />

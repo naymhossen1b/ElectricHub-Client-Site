@@ -23,7 +23,7 @@ const UpdateProduct = () => {
     const customarData = { tv_name, brand_name, type, tv_price, ratings, tv_image };
     console.log(customarData);
 
-    fetch(`http://localhost:5000/${params.type}/${_id}`, {
+    fetch(`https://elctronic-hub-server-7c7w7vv2b-nayms-projects.vercel.app/${params.type}/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

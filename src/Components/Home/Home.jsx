@@ -14,7 +14,7 @@ const Home = () => {
     return (
        <>
        <Healmet title="Home" />
-        <div>
+        <div className=" dark:bg-black dark:text-white">
             <Banner />
             <Policy />
            <div className="text-center">

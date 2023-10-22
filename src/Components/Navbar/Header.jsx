@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" py-3 shadow-md">
+    <div className=" py-3 shadow-md  dark:bg-black dark:text-white">
       <nav className="flex justify-between items-center">
         <div className="md:hidden text-4xl" onClick={() => setOpen(!open)}>
           {open == true ? <RxCross2 /> : <HiMenuAlt2 />}

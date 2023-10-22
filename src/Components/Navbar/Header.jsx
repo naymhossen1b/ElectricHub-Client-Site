@@ -145,7 +145,7 @@ const Header = () => {
           <div>
             {user?.email ? (
               <div className="avatar rounded-full">
-                <div className="w-12 rounded-full">
+                <div className="w-10 rounded-full">
                   <img className="rounded-full" src={user.photoURL} />
                 </div>
               </div>

@@ -53,14 +53,14 @@ const CartPage = () => {
         <div>
             {
                 cart.map( p =>  <div key={p._id}>
-                    <section className=" grid items-center  md:grid-cols-8 mt-7">
-                      <div className="flex p-3 items-center gap-5 w-96 col-span-3">
+                    <section className=" grid items-center  md:grid-cols- mt-7">
+                      <div className="flex p-3 items-center gap-5 col-span-3">
                         <img className="w-44" src={p.tv_image} alt="" />
                       </div>
                       {/*  */}
                       <div className="space-y-2 col-span-3 ">
-                        {/* <p className="text-2xl font-bold">{p.tv_name}</p> */}
-                        {/* <p className="font-bold">{p.description}</p> */}
+                        <p className="text-2xl font-bold">{p.tv_name}</p>
+                        <p className="font-bold">{p.description}</p>
                         <div className=" flex items-center font-bold gap-5 underline">
                           <p>{p.brand_name}</p>
                           <p>{p.type}</p>

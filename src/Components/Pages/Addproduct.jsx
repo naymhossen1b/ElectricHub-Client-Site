@@ -16,7 +16,7 @@ const Addproduct = () => {
     const customarData = { tv_image, brand_name, tv_name, type, tv_price, description, ratings };
     console.log(customarData);
 
-    fetch(`http://localhost:5000/add/${type}/`, {
+    fetch(`https://elctronic-hub-server-abey733va-nayms-projects.vercel.app/add/${type}/`, {
       method: "POST",
       headers: {
         'content-type': 'application/json',

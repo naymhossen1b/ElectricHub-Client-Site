@@ -24,7 +24,7 @@ const appRouter = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/category')
+                loader: () => fetch('https://elctronic-hub-server-abey733va-nayms-projects.vercel.app/category')
             },
             {
                 path: '/addproduct',
@@ -53,20 +53,17 @@ const appRouter = createBrowserRouter([
             {
                 path:'/getproduct/:type',
                 element: <Tvs />,
-                loader: ({params}) => fetch(`http://localhost:5000/${params.type}`)
+                loader: ({params}) => fetch(`https://elctronic-hub-server-abey733va-nayms-projects.vercel.app/${params.type}`)
             },
             {
                 path: "/:type/:id",
                 element: <Privateroute><Productdetails /></Privateroute>,
-                loader: ({params}) => fetch(`http://localhost:5000/${params.type}/${params.id}`)
+                loader: ({params}) => fetch(`https://elctronic-hub-server-abey733va-nayms-projects.vercel.app/${params.type}/${params.id}`)
             },
             {
                 path: '/update/:type/:id',
                 element: <Privateroute><UpdateProduct /></Privateroute>,
-                loader: ({params}) =>  fetch(`http://localhost:5000/update/${params.type}/${params.id}`)
-
-                // loader: ({params}) => fetch(`http://localhost:5000//${params.type}`)
-                // loader: ({params}) => fetch(`http://localhost:5000//tvs/${params.id}`)
+                loader: ({params}) =>  fetch(`https://elctronic-hub-server-abey733va-nayms-projects.vercel.app/update/${params.type}/${params.id}`)
             }
         ]
     }

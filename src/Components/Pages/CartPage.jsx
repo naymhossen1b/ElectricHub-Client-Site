@@ -7,91 +7,98 @@ import Swal from "sweetalert2";
 const CartPage = () => {
   const { user } = useContext(AuthContext);
   const [cart, setCart] = useCart();
-//   const navigate = useNavigate();
-
-
+    // const navigate = useNavigate();
 
   const removeProduct = (pid) => {
     try {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            let myCart = [...cart];
-            let index = myCart.findIndex((item) => item._id === pid);
-            myCart.splice(index, 1);
-            setCart(myCart);
-            localStorage.setItem('cart', JSON.stringify(myCart));
-            Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
-          }
-        });
-      } catch (error) {
-        console.log(error);
-      }
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let myCart = [...cart];
+          let index = myCart.findIndex((item) => item._id === pid);
+          myCart.splice(index, 1);
+          setCart(myCart);
+          localStorage.setItem("cart", JSON.stringify(myCart));
+          Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
+        }
+      });
+    } catch (error) {
+      console.log(error);
     }
-
-
+  };
 
   return (
     <div>
-    <div className="text-center">
-      <h2>
-        {
-            cart?.length
+      <div className="text-center">
+        <h2 className="text-5xl font-bold">
+          {cart?.length
             ? `${user.accessToken ? "" : "Pleace Login to Checkout"}`
-            : "Your Cart is Empty"
-        }
-      </h2>
-    </div>
-    <section>
+            : "Your Cart is Empty!!!"}
+        </h2>
+      </div>
+      <section>
         <div>
-            {
-                cart.map( p =>  <div key={p._id}>
-                    <section className="md:flex grid items-center  md:grid-cols- mt-7 w-9/12 mx-auto">
-                      <div className="flex p-3 items-center gap-5 col-span-3">
-                        <img className="w-44" src={p.tv_image} alt="" />
-                      </div>
-                      {/*  */}
-                      <div className="space-y-2 col-span-3 ">
-                        <p className="text-2xl font-bold">{p.tv_name}</p>
-                        <p className="font-bold md:w-96">{p.description}</p>
-                        <div className=" flex items-center font-bold gap-5 underline">
-                          <p>{p.brand_name}</p>
-                          <p>{p.type}</p>
-                        </div>
-                        <div className="flex items-center font-bold gap-5">
-                          <div className="rating gap-1">
-                            <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
-                            <input
-                              type="radio"
-                              name="rating-3"
-                              className="mask mask-heart bg-orange-400"
-                              checked
-                            />
-                            <input type="radio" name="rating-3" className="mask mask-heart bg-yellow-400" />
-                            <input type="radio" name="rating-3" className="mask mask-heart bg-lime-400" />
-                            <input type="radio" name="rating-3" className="mask mask-heart bg-green-400" />
-                          </div>
-                          <p>{p.ratings}</p>
-                        </div>
-                      </div>
-                      <div className="col-span-2 md:ml-4 items-center grid text-center font-bold space-y-3">
-                        <h1> Price: ${p.tv_price}</h1>
-                        <button onClick={() => removeProduct(p._id)}  className="btn hover:bg-red-500 font-bold">Delete</button>
-                        <button className="btn hover:bg-green-500 font-bold">Buy Now</button>
-                      </div>
-                    </section>
-                  </div>)
-            }
+          {cart.map((p) => (
+            <div key={p._id}>
+              <section className="md:flex grid items-center md:gap-20 mt-7 w-9/12 mx-auto">
+                <div className="flex p-3 items-center gap-5 col-span-3">
+                  <img className="w-44" src={p.tv_image} alt="" />
+                </div>
+                <div className="space-y-2 col-span-3 ">
+                  <p className="text-2xl font-bold">{p.tv_name}</p>
+                  <p className="font-bold md:w-96">{p.description}</p>
+                  <div className=" flex items-center font-bold gap-5 underline">
+                    <p>{p.brand_name}</p>
+                    <p>{p.type}</p>
+                  </div>
+                  <div className="flex items-center font-bold gap-5">
+                    <div className="rating gap-1">
+                      <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        className="mask mask-heart bg-orange-400"
+                        checked
+                      />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        className="mask mask-heart bg-yellow-400"
+                      />
+                      <input type="radio" name="rating-3" className="mask mask-heart bg-lime-400" />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        className="mask mask-heart bg-green-400"
+                      />
+                    </div>
+                    <p>{p.ratings}</p>
+                  </div>
+                </div>
+                <div className="col-span-2 md:ml-4 items-center grid  text-center font-bold space-y-3">
+                  <h1> Price: ${p.tv_price}</h1>
+                  <button
+                    onClick={() => removeProduct(p._id)}
+                    className="btn hover:bg-red-500 hover:text-white font-bold"
+                  >
+                    Delete
+                  </button>
+                  <button className="btn hover:bg-green-500 hover:text-white font-bold">
+                    Buy Now
+                  </button>
+                </div>
+              </section>
+            </div>
+          ))}
         </div>
-    </section>
-      
+      </section>
     </div>
   );
 };

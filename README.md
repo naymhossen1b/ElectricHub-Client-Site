@@ -5,7 +5,7 @@
 
 - [Client Site](https://github.com/naymhossen1b/ElectricHub-Client-Site) - [Server Site](https://github.com/naymhossen1b/ElectricHub-Server-Site-) - [Live Demo](https://elctronic-hub.netlify.app/)
 
-
+## About
 "Visit our premier electronic brand shop for cutting-edge gadgets, top-notch appliances, and expert advice. Discover innovation and excellence today!"
 
 ## Electronic brand shop offers various services to satisfy customer needs and preferences, ensuring a personalized and satisfying shopping experience.

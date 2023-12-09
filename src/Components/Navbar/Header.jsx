@@ -47,7 +47,7 @@ const Header = () => {
             <NavLink
               to="/"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "font-bold underline text-green-500" : ""
+                isPending ? "pending" : isActive ? "font-bold text-green-500" : ""
               }
             >
               Home
@@ -58,7 +58,7 @@ const Header = () => {
             <NavLink
               to="/addproduct"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "font-bold underline text-green-500" : ""
+                isPending ? "pending" : isActive ? "font-bold text-green-500" : ""
               }
             >
               Add Product
@@ -68,7 +68,7 @@ const Header = () => {
             <NavLink
               to="/cart"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "font-bold underline text-green-500" : ""
+                isPending ? "pending" : isActive ? "font-bold text-green-500" : ""
               }
             >
               <Badge count={cart?.length} showZero offset={[10, -5]}>

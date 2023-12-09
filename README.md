@@ -2,12 +2,15 @@
 # ElectricHub
 
 ## 🔗 ElctronicHub Live Link
-[ElctronicHub](https://naym-elctronic-hub.web.app/)
+
+- [Client Site](https://github.com/naymhossen1b/ElectricHub-Client-Site) - [Server Site](https://github.com/naymhossen1b/ElectricHub-Server-Site-) - [Live Demo](https://elctronic-hub.netlify.app/)
 
 
 "Visit our premier electronic brand shop for cutting-edge gadgets, top-notch appliances, and expert advice. Discover innovation and excellence today!"
 
 ## Electronic brand shop offers various services to satisfy customer needs and preferences, ensuring a personalized and satisfying shopping experience.
+
+## Key Features
 
 - Light/dark mode toggle
 - Product Selection: The electronic brand shop should offer a wide range of products to cater to various customer preferences.
@@ -19,20 +22,13 @@
 - Customer Feedback: Collect and act on customer feedback to continually improve services and product offerings.
 
 
+## Technologies Used
 
+  - Frontend: React.js, Tailwind CSS
+  - Backend: Node.js, Express.js
+  - Database: MongoDB,
+  - Authentication: Firebase Authentication.
 
+## Current Status
 
-
-
-
-
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Actively developing and refining the project to enhance user experience and add more features.
